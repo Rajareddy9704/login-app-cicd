@@ -1,127 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>DevOps Login</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
         body {
+            margin: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
-        .login-container {
+        .login-box {
+            background: white;
             width: 350px;
             padding: 35px;
-            background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             margin-bottom: 25px;
             color: #333;
         }
 
         input {
-            width: 100%;
+            width: 90%;
             padding: 12px;
-            margin-bottom: 15px;
+            margin: 10px;
             border: 1px solid #ccc;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
         button {
-            width: 100%;
+            width: 95%;
             padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
             background: #667eea;
             color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
             font-size: 16px;
+            cursor: pointer;
         }
 
         button:hover {
-            background: #5568d8;
-        }
-
-        .message {
-            text-align: center;
-            margin-top: 15px;
-            color: green;
+            background: #4c63d2;
         }
     </style>
 </head>
 
 <body>
 
-<div class="login-container">
+<div class="login-box">
 
     <h1>DevOps Login</h1>
 
-    <form onsubmit="login(event)">
+    <form>
+        <input type="text" placeholder="Username" required>
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Username"
-            required
-        >
+        <input type="password" placeholder="Password" required>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-        >
-
-        <button type="submit">
-            Login
-        </button>
-
+        <button type="submit">Login</button>
     </form>
 
-    <div id="message" class="message"></div>
-
 </div>
-
-<script>
-
-function login(event) {
-
-    event.preventDefault();
-
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (username === "admin" && password === "admin123") {
-
-        document.getElementById("message").innerText =
-            "Login Successful!";
-
-    } else {
-
-        document.getElementById("message").innerText =
-            "Invalid Username or Password";
-
-    }
-}
-
-</script>
 
 </body>
 </html>
